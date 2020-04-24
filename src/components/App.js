@@ -3,20 +3,19 @@ import { BrowserRouter as Router , Route, Switch } from 'react-router-dom';
 
 import RankingLists from './RankingLists';
 import Header from './Header';
-import MyListModal from './MyListModal';
+import UserListModal from './UserListModal';
 
-const App = () => {
-    return (
-        <div className="container">
-            <Router>
-                <Header />
-                <RankingLists />
-                <Switch>
-                    <Route path="/userlist" exact component={MyListModal} />
-                </Switch>
-            </Router>
-        </div>
-    );
+class App extends React.Component {
+    render() {
+        return (
+            <div className="container">
+                <Router>
+                    <Header />
+                    <RankingLists />
+                </Router>
+            </div>
+        )
+    }
 }
 
 export default App;

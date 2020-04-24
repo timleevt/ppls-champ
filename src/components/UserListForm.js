@@ -17,44 +17,96 @@ class UserListForm extends React.Component {
     
     renderRankSelectOption = () => {
         if(this.state.boxrecList) {
-        return this.state.boxrecList.map(boxer => <option>{boxer}</option>)
+            return this.state.boxrecList.map((boxer, index) => <option key={index}>{boxer}</option>)
         }
     }
 
     renderRankSelect = () => {
         if(this.state.boxrecList) {
-            const test = []
+            const rankSelectList = []
             for(let i = 1; i <= 10; i++) {
-                test.push(
-                    <div class="field">
-                        <div class="control">
-                            <div class="select">
-                                <select>{this.renderRankSelectOption()}</select>
+                rankSelectList.push(
+                    <div key={i} className="field is-horizontal">
+                        <div className="field-label is-normal">
+                            <label className="label">Rank #{i}</label>
+                        </div>
+                        <div className="field-body">
+                            <div className="field">
+                                <div className="control">
+                                    <div className="select">
+                                        <select name={`rank_${i}`}>{this.renderRankSelectOption()}</select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 )
             }
-            return test;
+            return rankSelectList;
         }
         return <div>Loading..</div>
+    }
+
+    // Submit new list creation
+    onNewUserListFormSubmit = e => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        axios.post(`http://127.0.0.1:5000/testpost`,
+            data
+        )
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+        console.log('well.. something happened.');
+    }
+
+    onLoadUserSubmit = e => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        console.log('Do some get request here I suppose..');
+        console.log(data);
     }
 
     render() {
         return (
             <div className="field">
-                <form>
-                    <label>Have a list already? Load it here: </label>
-                    <input class="input" type="Username" placeholder="User ID" />
-                    <button class="button is-primary">Submit</button>
+                {/* Form for loading already existing list */}
+                <form onSubmit={this.onLoadUserSubmit}>
+                    <p className="help">Have a list already? Load it here</p>
+                    <div className="field has-addons">
+                        <div className="control is-expanded">
+                            <input name="userID" className="input" type="text" placeholder="User ID" />
+                        </div>
+                        <div className="control">
+                            {/* This isn't working as a submit button for some reason */}
+                            <a className="button is-info">Load</a> 
+                        </div>
+                    </div>
                 </form>
                 <hr />
-                <form>
-                    <label class="label">Create your list</label>
-                    {this.renderRankSelect()}
-                    <button class="button is-primary">Submit</button>
+                {/* Form for new list creation */}
+                <form onSubmit={this.onNewUserListFormSubmit}>
+                    <div className="field">
+                        <label className="label">Create your list</label>
+                    </div>
+                    <div className="field">
+                        <input name="userID" className="input" type="text" placeholder="User ID" />
+                    </div>
+                    <div className="field">
+                        {this.renderRankSelect()}
+                    </div>
+                    <div className="field is-grouped">
+                        <div className="control">
+                            <button className="button is-link">Submit</button>
+                        </div>
+                        <div className="control">
+                            <button className="button is-link is-light">Cancel</button>
+                        </div>
+                    </div>
                 </form>
-
             </div>
         )
     }

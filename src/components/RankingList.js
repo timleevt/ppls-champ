@@ -20,7 +20,7 @@ class RankingList extends React.Component {
             <div className="content">
                 <h4>{this.props.title}</h4>
                 <ol>
-                    {this.state.ranking.map(person => <li>{person}</li>)}
+                    {this.state.ranking.map((person,index) => <li key={index}>{person}</li>)}
                 </ol>
             </div>
         )
