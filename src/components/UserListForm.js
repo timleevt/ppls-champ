@@ -47,27 +47,33 @@ class UserListForm extends React.Component {
         return <div>Loading..</div>
     }
 
-    // Submit new list creation
+    // Handles submission of a new user list
     onNewUserListFormSubmit = e => {
         e.preventDefault();
+        const newUserListObj = {}
+        // Iterate through key/values retrieved from the form
         const data = new FormData(e.target);
-        axios.post(`http://127.0.0.1:5000/testpost`,
-            data
+        for(var pair of data.entries()) {
+            newUserListObj[pair[0]] = pair[1]
+        }
+
+        // Send the post request to the backend
+        axios.post(`http://127.0.0.1:5000/userlist`,
+            newUserListObj
         )
         .then(res => {
-          console.log(res);
+            console.log(res);
         })
-        .catch(err => {
+        .catch(err =>{
             console.log(err);
-        });
-        console.log('well.. something happened.');
+        })
     }
 
     onLoadUserSubmit = e => {
         e.preventDefault();
         const data = new FormData(e.target);
-        console.log('Do some get request here I suppose..');
-        console.log(data);
+        console.log('Do some get request here that loads existing users');
+        console.log(data.getAll("userID"));
     }
 
     render() {
@@ -82,11 +88,14 @@ class UserListForm extends React.Component {
                         </div>
                         <div className="control">
                             {/* This isn't working as a submit button for some reason */}
-                            <a className="button is-info">Load</a> 
+                            {/* <a className="button is-info">Load</a>  */}
+                            <button className="button is-link">Load</button>
                         </div>
                     </div>
                 </form>
+
                 <hr />
+                
                 {/* Form for new list creation */}
                 <form onSubmit={this.onNewUserListFormSubmit}>
                     <div className="field">
