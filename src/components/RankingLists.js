@@ -1,18 +1,18 @@
 import React from 'react';
 
 import RankingList from './RankingList';
-import UserList from './UserList';
 import UserListModal from './UserListModal';
 
 class RankingLists extends React.Component {
     state = {
-        showUserListModal: false
+        showUserListModal: false,
+        mylist: null
     }
 
     renderRankLists = () => {
-        // TODO: If userListLoaded render it onto the screen else return without
         return (
             <React.Fragment>
+                {this.state.mylist && <div className="column"><RankingList key="ml" title={this.state.mylist} url="tbrb"/></div>}
                 <div className="column"><RankingList key="tpc" title="The People's Champ" url="tbrb"/></div>
                 <div className="column"><RankingList key="br" title="Boxrec" url="boxrec"/></div>
                 <div className="column"><RankingList key="tbrb" title="TBRB" url="tbrb"/></div>
@@ -30,7 +30,6 @@ class RankingLists extends React.Component {
         return (
             <div className="is-centered">
                 <div className="columns">
-                    {/* <div className="column"><UserList title="YOUR List"/></div> */}
                     {this.renderRankLists()}
                 </div>
                 <div>

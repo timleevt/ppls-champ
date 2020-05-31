@@ -56,7 +56,6 @@ class UserListForm extends React.Component {
         for(var pair of data.entries()) {
             newUserListObj[pair[0]] = pair[1]
         }
-
         // Send the post request to the backend
         axios.post(`http://127.0.0.1:5000/userlist`,
             newUserListObj
@@ -72,8 +71,14 @@ class UserListForm extends React.Component {
     onLoadUserSubmit = e => {
         e.preventDefault();
         const data = new FormData(e.target);
-        console.log('Do some get request here that loads existing users');
-        console.log(data.getAll("userID"));
+        axios.get(`http://127.0.0.1:5000/userlist/${data.getAll("userID")[0]}`, // update this to take dynamic values later
+        )
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err =>{
+            console.log(err);
+        })
     }
 
     render() {
@@ -87,8 +92,6 @@ class UserListForm extends React.Component {
                             <input name="userID" className="input" type="text" placeholder="User ID" />
                         </div>
                         <div className="control">
-                            {/* This isn't working as a submit button for some reason */}
-                            {/* <a className="button is-info">Load</a>  */}
                             <button className="button is-link">Load</button>
                         </div>
                     </div>
