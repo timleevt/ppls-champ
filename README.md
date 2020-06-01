@@ -12,16 +12,14 @@ TODO for V1 release:
 -error handling for bad requests on the backend
 -remove sensitive info from backend (database id/pw, etc) and make it use environment variabes
 -deploy via heroku
-
+-about page
 
 Extras: (To be done in the future)
--about page
 -styling fixes
 -optimize network requests
 -fix so default name on form is not Canelo
 -24 hour timer before list can be updated
--Timer based on ip address to prevent spam
--captcha (?)
+-Spam prevention (timer/captcha)
 -Spinning boxer heads for loading icons
 -Logo
 -Champion belt icons
