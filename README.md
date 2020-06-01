@@ -33,6 +33,8 @@ Use `npm start` to run the code in localhost
 ## TODO for Version 1 Release
 - [ ] individual boxers listed must be unique
 - [x] display user list
+- [ ] calculate community list
+- [ ] display community list
 - [ ] mobile compatability
 - [ ] Create a cron job that will schedule the web scrape stuff once a week
 - [ ] error handling for bad requests on the backend
