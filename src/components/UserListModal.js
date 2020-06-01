@@ -12,8 +12,7 @@ class UserListModal extends React.Component {
                 <div className="modal-background"></div>
                 <div className="modal-content">
                     <div className="box">
-                        {/* Remember to give this a unique key later.. */}
-                        <UserListForm key="user-list-form"/> 
+                        <UserListForm key="user-list-form" onLoadUserSubmit={this.props.onLoadUserSubmit}/> 
                     </div>
                 </div>
                 <button className="modal-close is-large" aria-label="close" onClick={this.props.toggleModal}></button>

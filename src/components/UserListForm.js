@@ -68,17 +68,11 @@ class UserListForm extends React.Component {
         })
     }
 
-    onLoadUserSubmit = e => {
+    // Handles loading of existing user list
+    onLoadUserSubmit = (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
-        axios.get(`http://127.0.0.1:5000/userlist/${data.getAll("userID")[0]}`, // update this to take dynamic values later
-        )
-        .then(res => {
-            console.log(res);
-        })
-        .catch(err =>{
-            console.log(err);
-        })
+        this.props.onLoadUserSubmit(e, data.getAll("userID")[0]);
     }
 
     render() {

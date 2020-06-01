@@ -7,12 +7,25 @@ class RankingList extends React.Component {
     }
 
     componentDidMount() {
-        /* Fetch ranking list from url and save the first 10 into state */
-        axios.get(`http://127.0.0.1:5000/rankings/${this.props.url}`)
+        axios.get(`http://127.0.0.1:5000/${this.props.url}`)
           .then(res => {
-            const ranking = res.data.slice(0,10);
-            this.setState({ ranking });
-          })
+            //Handle user generated lists
+            if(this.props.url.includes("userlist")) {
+                let data = res.data;
+                const ranking = [];
+                for (const property in data) {
+                    if(property.includes("rank")) {
+                        // this may not be ordered properly so might have to
+                        ranking.push(data[property]);
+                    }
+                }
+                this.setState({ ranking });
+            } else {
+            // Handle pre-made ranking list responses
+                const ranking = res.data.slice(0,10);
+                this.setState({ ranking });
+            }
+        })
       }
     
     render() {
