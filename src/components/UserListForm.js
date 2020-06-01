@@ -11,6 +11,8 @@ class UserListForm extends React.Component {
         axios.get(`http://127.0.0.1:5000/rankings/boxrec`)
           .then(res => {
             const rankings = res.data;
+            rankings.sort();
+            rankings.unshift("Select");
             this.setState({ boxrecList: rankings });
           })
       }

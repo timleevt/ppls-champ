@@ -47,7 +47,6 @@ Use `npm start` to run the code in localhost
 
 ## Planned for future release
 - optimize network requests
-- fix so default name on form is not Canelo
 - 24 hour timer before list can be updated
 - Spam prevention (timer/captcha)
 - Spinning boxer heads for loading icons
