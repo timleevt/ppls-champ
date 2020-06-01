@@ -4,12 +4,15 @@
 - Javascript
 - React
 - Bulma
+
 **Backend**
 - Python
 - Flask-Restful
 - SQLAlchemy
+
 **Database**
 - PostgreSQL
+
 **Tools** 
 - Postman
 - Git
