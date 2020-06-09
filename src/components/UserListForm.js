@@ -77,7 +77,8 @@ class UserListForm extends React.Component {
         if(duplicates_exist) { 
             document.getElementById('test-hidden').style.visibility = "visible";
             return;
-        } else { 
+        } else {
+            console.log('Am i posting?'); 
             // Send the post request to the backend
             axios.post(`http://127.0.0.1:5000/userlist`,
                 newUserListObj

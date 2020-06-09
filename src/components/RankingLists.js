@@ -3,6 +3,9 @@ import React from 'react';
 import RankingList from './RankingList';
 import UserListModal from './UserListModal';
 
+import './RankingLists.css';
+
+
 class RankingLists extends React.Component {
     state = {
         showUserListModal: false,
@@ -13,11 +16,11 @@ class RankingLists extends React.Component {
     renderRankLists = () => {
         return (
             <React.Fragment>
-                {this.state.mylist && <div className="column"><RankingList key="ml" title={this.state.mylist} url={this.state.mylistURL}/></div>}
-                <div className="column"><RankingList key="tpc" title="The People's Champ" url="rankings/tbrb"/></div>
-                <div className="column"><RankingList key="br" title="Boxrec" url="rankings/boxrec"/></div>
-                <div className="column"><RankingList key="tbrb" title="TBRB" url="rankings/tbrb"/></div>
-                <div className="column"><RankingList key="ring" title="The Ring" url="rankings/thering"/></div>
+                {this.state.mylist && <div className="yaha column"><RankingList key="ml" title={this.state.mylist} url={this.state.mylistURL}/></div>}
+                <div className="yaha column"><RankingList key="tpc" title="The People's Champ" url="community"/></div>
+                <div className="yaha column"><RankingList key="br" title="Boxrec" url="rankings/boxrec"/></div>
+                <div className="yaha column"><RankingList key="tbrb" title="TBRB" url="rankings/tbrb"/></div>
+                <div className="yaha column"><RankingList key="ring" title="The Ring" url="rankings/thering"/></div>
             </React.Fragment>
         )
     }
