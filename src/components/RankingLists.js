@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 import RankingList from './RankingList';
 import UserListModal from './UserListModal';
@@ -44,9 +43,9 @@ class RankingLists extends React.Component {
                     {this.renderRankLists()}
                 </div>
                 <div>
-                    <a className="button is-large is-info is-fullwidth" href="#" onClick={this.toggleModal}>
+                    <button className="button is-large is-info is-fullwidth" onClick={this.toggleModal}>
                         Create/Load your own list!
-                    </a>
+                    </button>
                 </div>
                 <UserListModal show={this.state.showUserListModal} toggleModal={this.toggleModal} onLoadUserSubmit={this.onLoadUserSubmit}/>
             </div>

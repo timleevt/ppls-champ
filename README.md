@@ -31,22 +31,20 @@ Use `npm start` to run the code in localhost
 - Git
 
 ## TODO for Version 1 Release
-- [ ] individual boxers listed must be unique
+- [x] individual boxers listed must be unique
 - [x] display user list
 - [ ] calculate community list
 - [ ] display community list
+- [ ] get modal to clear items and close out on submission for new list or load
 - [ ] mobile compatability
 - [ ] Create a cron job that will schedule the web scrape stuff once a week
 - [ ] error handling for bad requests on the backend
 - [ ] remove sensitive info from backend (database id/pw, etc) and make it use environment variabes
 - [ ] deploy via heroku
-- [ ] styling fixes
-
-## Bugs
-- loading a different list does not clear out the first one
 
 ## Planned for future release
-- optimize network requests
+- Revamped design
+- Optimize network requests
 - 24 hour timer before list can be updated
 - Spam prevention (timer/captcha)
 - Spinning boxer heads for loading icons

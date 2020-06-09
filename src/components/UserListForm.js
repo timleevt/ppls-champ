@@ -12,17 +12,22 @@ class UserListForm extends React.Component {
           .then(res => {
             const rankings = res.data;
             rankings.sort();
-            rankings.unshift("Select");
             this.setState({ boxrecList: rankings });
-          })
+        })
+
+        document.getElementById('test-hidden').style.visibility = "hidden";
       }
     
+    // Iterates through the state.boxrecList item and returns the HTML "option" tag with each of the values
     renderRankSelectOption = () => {
         if(this.state.boxrecList) {
-            return this.state.boxrecList.map((boxer, index) => <option key={index}>{boxer}</option>)
+            let boxerOptions = this.state.boxrecList.map((boxer, index) => <option key={index}>{boxer}</option>);
+            boxerOptions.unshift(<option key="default-select" value ="DEFAULT" hidden disabled>Select</option>);
+            return boxerOptions;
         }
     }
 
+    // Renders the 10 Select boxes on the screen
     renderRankSelect = () => {
         if(this.state.boxrecList) {
             const rankSelectList = []
@@ -36,7 +41,7 @@ class UserListForm extends React.Component {
                             <div className="field">
                                 <div className="control">
                                     <div className="select">
-                                        <select name={`rank_${i}`}>{this.renderRankSelectOption()}</select>
+                                        <select defaultValue={'DEFAULT'} name={`rank_${i}`} required>{this.renderRankSelectOption()}</select>
                                     </div>
                                 </div>
                             </div>
@@ -52,22 +57,38 @@ class UserListForm extends React.Component {
     // Handles submission of a new user list
     onNewUserListFormSubmit = e => {
         e.preventDefault();
-        const newUserListObj = {}
-        // Iterate through key/values retrieved from the form
+        let newUserListObj = {}
         const data = new FormData(e.target);
+        let duplicates_exist = false;
+        
         for(var pair of data.entries()) {
-            newUserListObj[pair[0]] = pair[1]
+            let selectContainer = document.getElementsByName(pair[0])[0].parentElement;
+
+            // Clean up form to clear duplicate warnings if they exist
+            selectContainer.classList.remove('is-danger');
+
+            // Flag any duplicates and return without making the request if found
+            if (Object.values(newUserListObj).indexOf(pair[1]) > -1) {
+                selectContainer.classList.add('is-danger');
+                duplicates_exist = true;
+            }
+            newUserListObj[pair[0]] = pair[1];
         }
-        // Send the post request to the backend
-        axios.post(`http://127.0.0.1:5000/userlist`,
-            newUserListObj
-        )
-        .then(res => {
-            console.log(res);
-        })
-        .catch(err =>{
-            console.log(err);
-        })
+        if(duplicates_exist) { 
+            document.getElementById('test-hidden').style.visibility = "visible";
+            return;
+        } else { 
+            // Send the post request to the backend
+            axios.post(`http://127.0.0.1:5000/userlist`,
+                newUserListObj
+            )
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err =>{
+                console.log(err);
+            })
+        }
     }
 
     // Handles loading of existing user list
@@ -101,11 +122,14 @@ class UserListForm extends React.Component {
                         <label className="label">Create your list</label>
                     </div>
                     <div className="field">
-                        <input name="userID" className="input" type="text" placeholder="User ID" />
+                        <input name="userID" className="input" type="text" placeholder="User ID" required/>
                     </div>
-                    <div className="field">
+                    
+                    <div id="rank-select-container" className="field">
                         {this.renderRankSelect()}
+                        <p id="test-hidden" className="help is-danger">Invalid input: duplicate entry</p>
                     </div>
+                    
                     <div className="field is-grouped">
                         <div className="control">
                             <button className="button is-link">Submit</button>
