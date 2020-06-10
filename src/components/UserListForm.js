@@ -78,7 +78,6 @@ class UserListForm extends React.Component {
             document.getElementById('test-hidden').style.visibility = "visible";
             return;
         } else {
-            console.log('Am i posting?'); 
             // Send the post request to the backend
             axios.post(`http://127.0.0.1:5000/userlist`,
                 newUserListObj
@@ -89,6 +88,7 @@ class UserListForm extends React.Component {
             .catch(err =>{
                 console.log(err);
             })
+            this.props.toggleModal(e);
         }
     }
 
@@ -136,7 +136,7 @@ class UserListForm extends React.Component {
                             <button className="button is-link">Submit</button>
                         </div>
                         <div className="control">
-                            <button className="button is-link is-light">Cancel</button>
+                            <button onClick={this.props.toggleModal} className="button is-link is-light">Cancel</button>
                         </div>
                     </div>
                 </form>

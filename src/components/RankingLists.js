@@ -27,7 +27,7 @@ class RankingLists extends React.Component {
 
     toggleModal = (e) => {
         e.preventDefault();
-        this.setState({showUserListModal: !this.state.showUserListModal})
+        this.setState({showUserListModal: !this.state.showUserListModal});
     }
 
     onLoadUserSubmit = (e, val) => {
@@ -35,7 +35,7 @@ class RankingLists extends React.Component {
         this.setState({ 
             mylist: `${val}'s list`,
             mylistURL: `userlist/${val}`,
-            showUserListModal: false 
+            showUserListModal: false
         });
     }
 
@@ -50,7 +50,7 @@ class RankingLists extends React.Component {
                         Create/Load your own list!
                     </button>
                 </div>
-                <UserListModal show={this.state.showUserListModal} toggleModal={this.toggleModal} onLoadUserSubmit={this.onLoadUserSubmit}/>
+                <UserListModal show={this.state.showUserListModal} toggleModal={this.toggleModal} onLoadUserSubmit={this.onLoadUserSubmit} />
             </div>
         )
     }

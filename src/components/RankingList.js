@@ -7,6 +7,17 @@ class RankingList extends React.Component {
     }
 
     componentDidMount() {
+        this.fetchRankingList();
+    }
+      
+    componentDidUpdate(prevProps) {
+        // Compare props to check for change
+        if (this.props.url !== prevProps.url) {
+            this.fetchRankingList();
+        }
+    }
+
+    fetchRankingList = () => {
         axios.get(`http://127.0.0.1:5000/${this.props.url}`)
           .then(res => {
             //Handle user generated lists
@@ -15,7 +26,6 @@ class RankingList extends React.Component {
                 const ranking = [];
                 for (const property in data) {
                     if(property.includes("rank")) {
-                        // this may not be ordered properly so might have to
                         ranking.push(data[property]);
                     }
                 }
@@ -26,8 +36,8 @@ class RankingList extends React.Component {
                 this.setState({ ranking });
             }
         })
-      }
-    
+    }
+
     render() {
         return (
             <div className="content">

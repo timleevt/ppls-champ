@@ -35,15 +35,17 @@ Use `npm start` to run the code in localhost
 - [x] display user list
 - [x] calculate community list
 - [x] display community list
-- [ ] get modal to clear items and close out on submission for new list or load
-- [ ] mobile compatability
+- [x] get modal to clear items and close out on submission for new list or load
+- [ ] on submission of new list, preload the user list on to the website
+- [x] mobile compatability
 - [ ] Create a cron job that will schedule the web scrape stuff once a week
 - [ ] error handling for bad requests on the backend
 - [ ] remove sensitive info from backend (database id/pw, etc) and make it use environment variabes
 - [ ] deploy via heroku
 
 ## Planned for future release
-- Revamped design
+- cache results so user does not have to keep loading their list
+- Revamped design ( & for mobile )
 - Optimize network requests
 - 24 hour timer before list can be updated
 - Spam prevention (timer/captcha)
