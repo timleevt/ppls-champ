@@ -12,6 +12,13 @@ Node is needed for installing the dependencies
 Use `npm install` to install all dependencies from the package.json  
 Use `npm start` to run the code in localhost
 
+For the backend
+Activate the virtual environment 
+ex. `conda activate peopleschamp`
+Set the FLASK_APP and run
+`set FLASK_APP=app.py'
+`flask run`
+
 ## Tech Stack
 **Front-end**
 - Javascript
