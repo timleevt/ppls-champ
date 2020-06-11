@@ -25,3 +25,5 @@ yarn-error.log*
 
 # python env
 /api/ppls-champ-rest/.env
+__pycache__
+venv
