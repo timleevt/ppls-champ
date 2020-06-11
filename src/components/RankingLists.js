@@ -16,11 +16,11 @@ class RankingLists extends React.Component {
     renderRankLists = () => {
         return (
             <React.Fragment>
-                {this.state.mylist && <div className="yaha column"><RankingList key="ml" title={this.state.mylist} url={this.state.mylistURL}/></div>}
-                <div className="yaha column"><RankingList key="tpc" title="The People's Champ" url="community"/></div>
-                <div className="yaha column"><RankingList key="br" title="Boxrec" url="rankings/boxrec"/></div>
-                <div className="yaha column"><RankingList key="tbrb" title="TBRB" url="rankings/tbrb"/></div>
-                <div className="yaha column"><RankingList key="ring" title="The Ring" url="rankings/thering"/></div>
+                {this.state.mylist && <div className="rank-list column"><RankingList key="ml" title={this.state.mylist} url={this.state.mylistURL}/></div>}
+                <div className="rank-list column"><RankingList key="tpc" title="The People's Champ" url="community"/></div>
+                <div className="rank-list column"><RankingList key="br" title="Boxrec" url="rankings/boxrec"/></div>
+                <div className="rank-list column"><RankingList key="tbrb" title="TBRB" url="rankings/tbrb"/></div>
+                <div className="rank-list column"><RankingList key="ring" title="The Ring" url="rankings/thering"/></div>
             </React.Fragment>
         )
     }
@@ -39,6 +39,14 @@ class RankingLists extends React.Component {
         });
     }
 
+    onNewUserSubmit = (userID) => {
+        this.setState({ 
+            mylist: `${userID}'s list`,
+            mylistURL: `userlist/${userID}`,
+            showUserListModal: false
+        });
+    }
+
     render() {
         return (
             <div className="is-centered">
@@ -50,7 +58,7 @@ class RankingLists extends React.Component {
                         Create/Load your own list!
                     </button>
                 </div>
-                <UserListModal show={this.state.showUserListModal} toggleModal={this.toggleModal} onLoadUserSubmit={this.onLoadUserSubmit} />
+                <UserListModal show={this.state.showUserListModal} toggleModal={this.toggleModal} onLoadUserSubmit={this.onLoadUserSubmit} onNewUserSubmit={this.onNewUserSubmit}/>
             </div>
         )
     }

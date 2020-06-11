@@ -84,11 +84,11 @@ class UserListForm extends React.Component {
             )
             .then(res => {
                 console.log(res);
+                this.props.onNewUserSubmit(newUserListObj["userID"]);
             })
             .catch(err =>{
                 console.log(err);
-            })
-            this.props.toggleModal(e);
+            }) 
         }
     }
 

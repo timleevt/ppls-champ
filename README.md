@@ -36,11 +36,10 @@ Use `npm start` to run the code in localhost
 - [x] calculate community list
 - [x] display community list
 - [x] get modal to clear items and close out on submission for new list or load
-- [ ] on submission of new list, preload the user list on to the website
+- [x] on submission of new list, preload the user list on to the website
 - [x] mobile compatability
 - [ ] Create a cron job that will schedule the web scrape stuff once a week
 - [ ] error handling for bad requests on the backend
-- [ ] remove sensitive info from backend (database id/pw, etc) and make it use environment variabes
 - [ ] deploy via heroku
 
 ## Planned for future release
