@@ -34,7 +34,7 @@ This repository will serve as the codebase for the front-end React portion of th
 - [x] get modal to clear items and close out on submission for new list or load
 - [x] on submission of new list, preload the user list on to the website
 - [x] mobile compatability
-- [ ] Create a cron job that will schedule the web scrape stuff once a week
+- [ ] Create a cron job that will schedule the web scrape once a week
 - [ ] error handling for bad requests on the backend
 - [x] deploy via heroku
 
