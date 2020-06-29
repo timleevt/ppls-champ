@@ -1,0 +1,1 @@
+{"version":3,"sources":["RankingLists.css"],"names":[],"mappings":"AAAA,WACI,qBAAuB,CACvB,SACJ","file":"main.dea506df.chunk.css","sourcesContent":[".rank-list {\r\n    border: solid 1px black;\r\n    margin: 2%;\r\n}"]}

@@ -7,17 +7,6 @@ Using python, I scraped some of the most respected lists online and put them int
 
 This repository will serve as the codebase for the front-end React portion of the application. It will also house information about the project and the tech stack being used.
 
-## Pre-requisites & installation
-Node is needed for installing the dependencies  
-Use `npm install` to install all dependencies from the package.json  
-Use `npm start` to run the code in localhost
-
-For the backend
-Activate the virtual environment 
-ex. `conda activate peopleschamp`
-Set the FLASK_APP and run
-`set FLASK_APP=app.py'
-`flask run`
 
 ## Tech Stack
 **Front-end**
@@ -47,7 +36,7 @@ Set the FLASK_APP and run
 - [x] mobile compatability
 - [ ] Create a cron job that will schedule the web scrape stuff once a week
 - [ ] error handling for bad requests on the backend
-- [ ] deploy via heroku
+- [x] deploy via heroku
 
 ## Planned for future release
 - cache results so user does not have to keep loading their list
