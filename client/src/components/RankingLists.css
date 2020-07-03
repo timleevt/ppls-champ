@@ -1,4 +1,19 @@
 .rank-list {
     border: solid 1px black;
-    margin: 2%;
+    /* margin: 2%; */
+}
+
+.create-button {
+    color: blue;
+    margin-bottom: 1%;
+}
+
+.rank-list-col {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rank-list {
+    flex: 1;
+    max-width: 23%;
 }

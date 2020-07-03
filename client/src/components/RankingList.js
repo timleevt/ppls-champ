@@ -18,7 +18,8 @@ class RankingList extends React.Component {
     }
 
     fetchRankingList = () => {
-        axios.get(`/${this.props.url}`)
+        axios.get(`../${this.props.url}`)
+        // axios.get(`/${this.props.url}`)
           .then(res => {
             //Handle user generated lists
             if(this.props.url.includes("userlist")) {

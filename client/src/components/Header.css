@@ -1,0 +1,25 @@
+.banner-img {
+    /* width: 100%; */
+    height: auto;
+    opacity: .1;
+    /* text-align: center; */
+}
+
+.banner {
+    margin-top: 2%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Abril Fatface', cursive;
+}
+
+.other-list {
+    display: flex;
+}

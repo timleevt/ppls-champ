@@ -13,8 +13,7 @@ from .resources.community import CommunityList
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 CORS(app)
 app.config['SECRET_KEY'] = os.getenv('SECRET')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL') # for prod
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/ppls_champ'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL') or 'postgresql://postgres:postgres@localhost:5432/ppls_champ'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['CORS_HEADERS'] = 'Content-Type'

@@ -2,9 +2,9 @@ import React from 'react';
 
 import RankingList from './RankingList';
 import UserListModal from './UserListModal';
+import OtherLists from './OtherLists';
 
 import './RankingLists.css';
-
 
 class RankingLists extends React.Component {
     state = {
@@ -50,14 +50,11 @@ class RankingLists extends React.Component {
     render() {
         return (
             <div className="is-centered">
-                <div className="columns">
+                <button className="button is-text create-button" onClick={this.toggleModal}>Create / Load List</button>
+                <div className="columns rank-list-col">
                     {this.renderRankLists()}
                 </div>
-                <div>
-                    <button className="button is-large is-info is-fullwidth" onClick={this.toggleModal}>
-                        Create/Load your own list!
-                    </button>
-                </div>
+                <OtherLists />
                 <UserListModal show={this.state.showUserListModal} toggleModal={this.toggleModal} onLoadUserSubmit={this.onLoadUserSubmit} onNewUserSubmit={this.onNewUserSubmit}/>
             </div>
         )

@@ -7,6 +7,12 @@ Using python, I scraped some of the most respected lists online and put them int
 
 This repository will serve as the codebase for the front-end React portion of the application. It will also house information about the project and the tech stack being used.
 
+## Installation
+python dependencies: `pip install -r requirements.txt`.
+for Mac OS: `pip install psycopg2-binary` will also need to be done separately.
+npm: `npm install`
+postgres for Mac OS: `brew install postgres`
+or install via website
 
 ## Tech Stack
 **Front-end**

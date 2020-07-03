@@ -1,0 +1,19 @@
+ul {
+    margin: auto;
+}
+
+li {
+    color: black;
+    list-style: none;
+}
+
+
+.other-list-container {
+    text-align: center;
+    padding-bottom: 4%;
+}
+
+.other-list-item {
+    flex: 1;
+    flex-grow: 1;
+}
