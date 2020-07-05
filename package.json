@@ -12,8 +12,7 @@
   },
   "scripts": {
     "start": "cd client && npm start",
-    "start-api": "flask run",
-    "build": "cd client && yarn build"
+    "start-api": "flask run"
   },
   "eslintConfig": {
     "extends": "react-app"
