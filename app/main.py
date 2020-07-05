@@ -10,7 +10,7 @@ from .resources.userlist import UserList
 from .resources.userlist import UsersList
 from .resources.community import CommunityList
 
-app = Flask(__name__, static_folder='../build', static_url_path='/')
+app = Flask(__name__, static_folder='../client/build', static_url_path='/')
 CORS(app)
 app.config['SECRET_KEY'] = os.getenv('SECRET')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL') or 'postgresql://postgres:postgres@localhost:5432/ppls_champ'
