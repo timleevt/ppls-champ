@@ -32,24 +32,20 @@ or install via website
 - Postman
 - Git
 
-## TODO for Version 1 Release
-- [x] individual boxers listed must be unique
-- [x] display user list
-- [x] calculate community list
-- [x] display community list
-- [x] get modal to clear items and close out on submission for new list or load
-- [x] on submission of new list, preload the user list on to the website
-- [x] mobile compatability
-- [ ] Create a cron job that will schedule the web scrape once a week
+## TODO for V2 Release
 - [ ] error handling for bad requests on the backend
-- [x] deploy via heroku
+- [ ] 24 hour timer before list can be updated
+- [ ] Make mobile friendly
+- [ ] Clean up * on names
+
+## Bugs
+- [ ] Last push messed up mobile formatting
 
 ## Planned for future release
+- make names uniform across lists ex. Saul Alvarez -> Canelo Alvarez
+- organize folder structure to not need build file created before push
 - cache results so user does not have to keep loading their list
-- Revamped design ( & for mobile )
 - Optimize network requests
-- 24 hour timer before list can be updated
-- Spam prevention (timer/captcha)
 - Spinning boxer heads for loading icons
-- Logo
-- Champion belt icons
+- Champion belt icons/indicators
+- Heroku Scheduler, if needed. Otherwise load changes weekly, manually
