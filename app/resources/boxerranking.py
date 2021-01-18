@@ -4,8 +4,9 @@ import os
 
 class BoxerRanking(Resource):
     def get(self, website):
-        filename = 'app/data/' + website + '.txt'
-        boxer_list = []
+        filename = '../app/data/' + website + '.txt'
+        print(filename)
+        boxer_list = ['yaya']
         try:
             with open(filename, 'r') as f:
                 contents = f.readline()

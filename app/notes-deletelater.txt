@@ -1,0 +1,1 @@
+scrape_boxers still requires beautiful soup/requests to be installed.. will maybe leave this out of the docker file
