@@ -1,0 +1,16 @@
+h2 {
+    font-size: 32px;
+}
+
+ol {
+    /* To remove the left padding from lists */
+    margin-left: 0px;
+}
+
+.title {
+    margin-bottom: 3px !important;
+}
+
+.other-list {
+    margin: 0px !important;
+}

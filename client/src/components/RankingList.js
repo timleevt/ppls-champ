@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import './RankingList.css';
+
 class RankingList extends React.Component {
     state = {
         ranking: []
@@ -41,8 +43,9 @@ class RankingList extends React.Component {
 
     render() {
         return (
-            <div className="content">
-                <h4>{this.props.title}</h4>
+            // <div className="content">
+            <div>
+                <h2 className="title is-4">{this.props.title}</h2>
                 <ol>
                     {this.state.ranking.map((person,index) => <li key={index}>{person}</li>)}
                 </ol>

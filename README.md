@@ -8,11 +8,10 @@ Using python, I scraped some of the most respected lists online and put them int
 This repository will serve as the codebase for the front-end React portion of the application. It will also house information about the project and the tech stack being used.
 
 ## Installation
-python dependencies: `pip install -r requirements.txt`.
-for Mac OS: `pip install psycopg2-binary` will also need to be done separately.
-npm: `npm install`
-postgres for Mac OS: `brew install postgres`
-or install via website
+The below information may be ignored depending on if the docker file was properly created
+Installation of dependencies outside of the ones needed for the scraping mechanism (requests/beautiful soup) are no longer needed with Docker
+The set up for the backend should be complete with `docker-compose up --build`
+Front end installation: `npm install` or `yarn install`
 
 ## Tech Stack
 **Front-end**
@@ -31,24 +30,24 @@ or install via website
 **Tools** 
 - Postman
 - Git
+- Docker
 
-## TODO for Version 1 Release
-- [x] individual boxers listed must be unique
-- [x] display user list
-- [x] calculate community list
-- [x] display community list
-- [x] get modal to clear items and close out on submission for new list or load
-- [x] on submission of new list, preload the user list on to the website
-- [x] mobile compatability
+## TODO for Version 2 Release
 - [ ] Create a cron job that will schedule the web scrape once a week
 - [ ] error handling for bad requests on the backend
-- [x] deploy via heroku
+- [x] minimum Docker integration
+- [ ] Fix formatting for mobile
+- [ ] redo misc lists
+- [ ] add reddit p4p list
+- [ ] add testing to make sure lists do not error
 
 ## Planned for future release
+- full docker integration
 - cache results so user does not have to keep loading their list
-- Revamped design ( & for mobile )
-- Optimize network requests
+- pin system
+- fix dependency bot alerts
 - 24 hour timer before list can be updated
+- conversion to React Hooks
 - Spam prevention (timer/captcha)
 - Spinning boxer heads for loading icons
 - Logo

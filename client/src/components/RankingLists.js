@@ -16,11 +16,11 @@ class RankingLists extends React.Component {
     renderRankLists = () => {
         return (
             <React.Fragment>
-                {this.state.mylist && <div className="rank-list column"><RankingList key="ml" title={this.state.mylist} url={this.state.mylistURL}/></div>}
-                <div className="rank-list column"><RankingList key="tpc" title="The People's Champ" url="community"/></div>
-                <div className="rank-list column"><RankingList key="br" title="Boxrec" url="rankings/boxrec"/></div>
-                <div className="rank-list column"><RankingList key="tbrb" title="TBRB" url="rankings/tbrb"/></div>
-                <div className="rank-list column"><RankingList key="ring" title="The Ring" url="rankings/thering"/></div>
+                {this.state.mylist && <div className="rank-list"><RankingList key="ml" title={this.state.mylist} url={this.state.mylistURL}/></div>}
+                <div className="rank-list"><RankingList key="tpc" title="The People's Champ" url="community"/></div>
+                <div className="rank-list"><RankingList key="br" title="Boxrec" url="rankings/boxrec"/></div>
+                <div className="rank-list"><RankingList key="tbrb" title="TBRB" url="rankings/tbrb"/></div>
+                <div className="rank-list"><RankingList key="ring" title="The Ring" url="rankings/thering"/></div>
             </React.Fragment>
         )
     }
@@ -49,9 +49,9 @@ class RankingLists extends React.Component {
 
     render() {
         return (
-            <div className="is-centered">
+            <div>
                 <button className="button is-text create-button" onClick={this.toggleModal}>Create / Load List</button>
-                <div className="columns rank-list-col">
+                <div className="container rank-list-col">
                     {this.renderRankLists()}
                 </div>
                 <OtherLists />

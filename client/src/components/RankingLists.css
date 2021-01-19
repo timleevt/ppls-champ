@@ -1,10 +1,4 @@
-.rank-list {
-    border: solid 1px black;
-    /* margin: 2%; */
-}
-
 .create-button {
-    color: blue;
     margin-bottom: 1%;
 }
 
@@ -16,4 +10,35 @@
 .rank-list {
     flex: 1;
     max-width: 23%;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .rank-list {
+        flex: 1;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .rank-list-col {
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .rank-list {
+        /* border: 2px red dashed; */
+        flex: 2;
+        min-width: 50%;
+    }
+
+    .create-button {
+        margin-bottom: 5%;
+    }
 }
