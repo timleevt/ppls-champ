@@ -1,3 +1,7 @@
+# Abandoned Project 
+Site I was scraping no longer allows for it and lost interest in maintaining it.
+Also the overall front end design was bad and terribly not optimized for mobile
+
 # The Peoples Champ
 
 ## About
